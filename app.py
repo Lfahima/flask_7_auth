@@ -54,12 +54,8 @@ def google_auth():
 
 @app.route('/dashboard/')
 def dashboard():
-    print("here")
-    # user = session.get('user')
-    # if user:
-    return render_template('dashboard.html')
-    # else:
-    #     return redirect('/')
+    user = session.get('user')
+    return render_template('dashboard.html',  user=user)
 
 @app.route('/logout')
 def logout():
